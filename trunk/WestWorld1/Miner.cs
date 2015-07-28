@@ -1,6 +1,8 @@
 using System.Diagnostics;
 
 namespace WestWorld1 {
+    using WestWorld1.MinerStates;
+
     public class Miner : BaseGameEntity {
         public const int ComfortLevel = 5;
         private const int MaxNuggets = 3;
@@ -10,7 +12,6 @@ namespace WestWorld1 {
         private State _currentState;
 
         private int _goldCarried;
-        private int _moneyInBank;
         private int _thirst;
         private int _fatigue;
 
@@ -34,25 +35,25 @@ namespace WestWorld1 {
             _fatigue++;
         }
 
-        public int Wealth { get { return _moneyInBank; } set { _moneyInBank = value; } }
+        public int Wealth { get; set; }
 
         public void AddToWealth(int val) {
-            _moneyInBank += val;
-            if (_moneyInBank < 0) _moneyInBank = 0;
+            Wealth += val;
+            if (Wealth < 0) Wealth = 0;
         }
 
         public bool Thirsty { get { return _thirst >= ThirstLevel; } }
 
         public void BuyAndDrinkAWhiskey() {
             _thirst = 0;
-            _moneyInBank -= 2;
+            Wealth -= 2;
         }
 
         public Miner(string name)
             : base(name) {
             Location = Location.Shack;
             GoldCarried = 0;
-            _moneyInBank = 0;
+            Wealth = 0;
             _thirst = 0;
             _fatigue = 0;
             _currentState = GoHomeAndSleepTilRested.Instance;

@@ -1,21 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AI", "AI.csproj", "{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter2-StateMachines", "Chapter2-StateMachines", "{A15E8BD8-DF34-414F-B451-BF5FD8ECE841}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestWorld1", "..\WestWorld1\WestWorld1.csproj", "{E6CF5682-321A-4803-8359-C6251EF23349}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Original", "Original", "{FED738D8-4422-481B-802D-D5D1EECDBF8C}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WestWorld1", "..\..\..\..\BookSource\BucklandAI\Buckland_Chapter2-State Machines\WestWorld1\WestWorld1.vcxproj", "{E2542798-07CE-4068-BFAC-9F40B98D1244}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WestWorldWithMessaging", "..\..\..\..\BookSource\BucklandAI\Buckland_Chapter2-State Machines\WestWorldWithMessaging\WestWorldWithMessaging.vcxproj", "{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WestWorldWithWomen", "..\..\..\..\BookSource\BucklandAI\Buckland_Chapter2-State Machines\WestWorldWithWoman\WestWorldWithWomen.vcxproj", "{B91191CB-4504-493E-8BF6-2688EBB2015B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestWorldWithWoman", "..\WestWorldWithWoman\WestWorldWithWoman.csproj", "{22441FFB-6079-475C-A356-B5C826754334}"
 EndProject
@@ -29,16 +19,6 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{A17217F9-DD40-4D45-83E3-FDCD89CE82C5}.Release|Win32.ActiveCfg = Release|Any CPU
 		{E6CF5682-321A-4803-8359-C6251EF23349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E6CF5682-321A-4803-8359-C6251EF23349}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6CF5682-321A-4803-8359-C6251EF23349}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -49,36 +29,6 @@ Global
 		{E6CF5682-321A-4803-8359-C6251EF23349}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E6CF5682-321A-4803-8359-C6251EF23349}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E6CF5682-321A-4803-8359-C6251EF23349}.Release|Win32.ActiveCfg = Release|Any CPU
-		{E2542798-07CE-4068-BFAC-9F40B98D1244}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{E2542798-07CE-4068-BFAC-9F40B98D1244}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{E2542798-07CE-4068-BFAC-9F40B98D1244}.Debug|Mixed Platforms.Build.0 = Debug|Win32
-		{E2542798-07CE-4068-BFAC-9F40B98D1244}.Debug|Win32.ActiveCfg = Debug|Win32
-		{E2542798-07CE-4068-BFAC-9F40B98D1244}.Debug|Win32.Build.0 = Debug|Win32
-		{E2542798-07CE-4068-BFAC-9F40B98D1244}.Release|Any CPU.ActiveCfg = Release|Win32
-		{E2542798-07CE-4068-BFAC-9F40B98D1244}.Release|Mixed Platforms.ActiveCfg = Release|Win32
-		{E2542798-07CE-4068-BFAC-9F40B98D1244}.Release|Mixed Platforms.Build.0 = Release|Win32
-		{E2542798-07CE-4068-BFAC-9F40B98D1244}.Release|Win32.ActiveCfg = Release|Win32
-		{E2542798-07CE-4068-BFAC-9F40B98D1244}.Release|Win32.Build.0 = Release|Win32
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}.Debug|Mixed Platforms.Build.0 = Debug|Win32
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}.Debug|Win32.ActiveCfg = Debug|Win32
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}.Debug|Win32.Build.0 = Debug|Win32
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}.Release|Any CPU.ActiveCfg = Release|Win32
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}.Release|Mixed Platforms.ActiveCfg = Release|Win32
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}.Release|Mixed Platforms.Build.0 = Release|Win32
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}.Release|Win32.ActiveCfg = Release|Win32
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87}.Release|Win32.Build.0 = Release|Win32
-		{B91191CB-4504-493E-8BF6-2688EBB2015B}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{B91191CB-4504-493E-8BF6-2688EBB2015B}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
-		{B91191CB-4504-493E-8BF6-2688EBB2015B}.Debug|Mixed Platforms.Build.0 = Debug|Win32
-		{B91191CB-4504-493E-8BF6-2688EBB2015B}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B91191CB-4504-493E-8BF6-2688EBB2015B}.Debug|Win32.Build.0 = Debug|Win32
-		{B91191CB-4504-493E-8BF6-2688EBB2015B}.Release|Any CPU.ActiveCfg = Release|Win32
-		{B91191CB-4504-493E-8BF6-2688EBB2015B}.Release|Mixed Platforms.ActiveCfg = Release|Win32
-		{B91191CB-4504-493E-8BF6-2688EBB2015B}.Release|Mixed Platforms.Build.0 = Release|Win32
-		{B91191CB-4504-493E-8BF6-2688EBB2015B}.Release|Win32.ActiveCfg = Release|Win32
-		{B91191CB-4504-493E-8BF6-2688EBB2015B}.Release|Win32.Build.0 = Release|Win32
 		{22441FFB-6079-475C-A356-B5C826754334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{22441FFB-6079-475C-A356-B5C826754334}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22441FFB-6079-475C-A356-B5C826754334}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -95,9 +45,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E6CF5682-321A-4803-8359-C6251EF23349} = {A15E8BD8-DF34-414F-B451-BF5FD8ECE841}
-		{E2542798-07CE-4068-BFAC-9F40B98D1244} = {FED738D8-4422-481B-802D-D5D1EECDBF8C}
-		{0E2C3421-3A44-486D-8CB3-24DB1BDC5B87} = {FED738D8-4422-481B-802D-D5D1EECDBF8C}
-		{B91191CB-4504-493E-8BF6-2688EBB2015B} = {FED738D8-4422-481B-802D-D5D1EECDBF8C}
 		{22441FFB-6079-475C-A356-B5C826754334} = {A15E8BD8-DF34-414F-B451-BF5FD8ECE841}
 	EndGlobalSection
 EndGlobal
