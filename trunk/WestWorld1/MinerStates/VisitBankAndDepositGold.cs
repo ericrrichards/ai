@@ -8,35 +8,35 @@
 
 
 
-        public override void Enter(Miner m) {
-            if (m.Location != Location.Bank) {
+        public override void Enter(Miner miner) {
+            if (miner.Location != Location.Bank) {
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: Goin' to the bank. Yes siree", m.Name);
+                Console.WriteLine("{0}: Goin' to the bank. Yes siree", miner.Name);
 
-                m.Location = Location.Bank;
+                miner.Location = Location.Bank;
             }
         }
 
-        public override void Execute(Miner m) {
-            m.AddToWealth(m.GoldCarried);
-            m.GoldCarried = 0;
+        public override void Execute(Miner miner) {
+            miner.AddToWealth(miner.GoldCarried);
+            miner.GoldCarried = 0;
             ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Depositing gold. Total saving now: {1}", m.Name, m.Wealth);
+            Console.WriteLine("{0}: Depositing gold. Total saving now: {1}", miner.Name, miner.Wealth);
 
-            if (m.Wealth >= Miner.ComfortLevel) {
+            if (miner.Wealth >= Miner.ComfortLevel) {
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: Woohoo! Rich enough for now. Back home to my li'lle lady", m.Name);
+                Console.WriteLine("{0}: Woohoo! Rich enough for now. Back home to my li'lle lady", miner.Name);
 
-                m.ChangeState(GoHomeAndSleepTilRested.Instance);
+                miner.ChangeState(GoHomeAndSleepTilRested.Instance);
             }
             else {
-                m.ChangeState(EnterMineAndDigForNugget.Instance);
+                miner.ChangeState(EnterMineAndDigForNugget.Instance);
             }
         }
 
-        public override void Exit(Miner m) {
+        public override void Exit(Miner miner) {
             ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Leavin' the bank", m.Name);
+            Console.WriteLine("{0}: Leavin' the bank", miner.Name);
         }
     }
 }

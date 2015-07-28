@@ -6,20 +6,20 @@
         private QuenchThirst() { }
         public static QuenchThirst Instance {get {return Lazy.Value;}}
 
-        public override void Enter(Miner m) {
-            if (m.Location != Location.Saloon) {
-                m.Location = Location.Saloon;
+        public override void Enter(Miner miner) {
+            if (miner.Location != Location.Saloon) {
+                miner.Location = Location.Saloon;
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: Boy, ah sure is thusty! Walking to the saloon", m.Name);
+                Console.WriteLine("{0}: Boy, ah sure is thusty! Walking to the saloon", miner.Name);
             }
         }
 
-        public override void Execute(Miner m) {
-            if (m.Thirsty) {
-                m.BuyAndDrinkAWhiskey();
+        public override void Execute(Miner miner) {
+            if (miner.Thirsty) {
+                miner.BuyAndDrinkAWhiskey();
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: That's mighty fine sippin liquer", m.Name);
-                m.ChangeState(EnterMineAndDigForNugget.Instance);
+                Console.WriteLine("{0}: That's mighty fine sippin liquer", miner.Name);
+                miner.ChangeState(EnterMineAndDigForNugget.Instance);
             }
             else {
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
@@ -27,9 +27,9 @@
             }
         }
 
-        public override void Exit(Miner m) {
+        public override void Exit(Miner miner) {
             ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Leaving the saloon, feelin' good", m.Name);
+            Console.WriteLine("{0}: Leaving the saloon, feelin' good", miner.Name);
         }
     }
 }

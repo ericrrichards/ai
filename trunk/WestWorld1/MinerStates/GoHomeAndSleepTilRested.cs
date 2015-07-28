@@ -8,30 +8,30 @@
         
 
 
-        public override void Enter(Miner m) {
-            if (m.Location != Location.Shack) {
+        public override void Enter(Miner miner) {
+            if (miner.Location != Location.Shack) {
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: Walkin' home", m.Name);
-                m.Location = Location.Shack;
+                Console.WriteLine("{0}: Walkin' home", miner.Name);
+                miner.Location = Location.Shack;
             }
         }
 
-        public override void Execute(Miner m) {
-            if (!m.Fatigued) {
+        public override void Execute(Miner miner) {
+            if (!miner.Fatigued) {
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: What a God-darn fantastic nap! Time to find more gold", m.Name);
-                m.ChangeState(EnterMineAndDigForNugget.Instance);
+                Console.WriteLine("{0}: What a God-darn fantastic nap! Time to find more gold", miner.Name);
+                miner.ChangeState(EnterMineAndDigForNugget.Instance);
             }
             else {
-                m.DecreaseFatigue();
+                miner.DecreaseFatigue();
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: ZZZZZ...", m.Name);
+                Console.WriteLine("{0}: ZZZZZ...", miner.Name);
             }
         }
 
-        public override void Exit(Miner m) {
+        public override void Exit(Miner miner) {
             ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Leaving the house", m.Name);
+            Console.WriteLine("{0}: Leaving the house", miner.Name);
         }
     }
 }

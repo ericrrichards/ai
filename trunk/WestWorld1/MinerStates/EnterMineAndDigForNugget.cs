@@ -8,32 +8,32 @@ namespace WestWorld1.MinerStates {
         public static EnterMineAndDigForNugget Instance {get {return Lazy.Value;}}
 
 
-        public override void Enter(Miner m) {
-            if (m.Location != Location.Goldmine) {
+        public override void Enter(Miner miner) {
+            if (miner.Location != Location.Goldmine) {
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: Walkin' to the goldmine", m.Name);
+                Console.WriteLine("{0}: Walkin' to the goldmine", miner.Name);
             
-                m.Location = Location.Goldmine;
+                miner.Location = Location.Goldmine;
             }
         }
 
-        public override void Execute(Miner m) {
-            m.GoldCarried++;
-            m.IncreaseFatigue();
+        public override void Execute(Miner miner) {
+            miner.GoldCarried++;
+            miner.IncreaseFatigue();
 
             ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Pickin' up a nugget", m.Name);
-            if (m.PocketsFull) {
-                m.ChangeState(VisitBankAndDepositGold.Instance);
+            Console.WriteLine("{0}: Pickin' up a nugget", miner.Name);
+            if (miner.PocketsFull) {
+                miner.ChangeState(VisitBankAndDepositGold.Instance);
             }
-            if (m.Thirsty) {
-                m.ChangeState(QuenchThirst.Instance);
+            if (miner.Thirsty) {
+                miner.ChangeState(QuenchThirst.Instance);
             }
         }
 
-        public override void Exit(Miner m) {
+        public override void Exit(Miner miner) {
             ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Ah'm leavin' the goldmine with mah pockets full o' sweet gold", m.Name);
+            Console.WriteLine("{0}: Ah'm leavin' the goldmine with mah pockets full o' sweet gold", miner.Name);
         }
     }
 }
