@@ -1,42 +1,42 @@
 ﻿namespace WestWorld1.MinerStates {
     using System;
 
-    public class VisitBankAndDepositGold : State {
+    public class VisitBankAndDepositGold : IState<Miner> {
         private static readonly Lazy<VisitBankAndDepositGold> Lazy = new Lazy<VisitBankAndDepositGold>(()=>new VisitBankAndDepositGold());
         private VisitBankAndDepositGold() { }
         public static VisitBankAndDepositGold Instance { get { return Lazy.Value; }}
 
 
 
-        public override void Enter(Miner miner) {
-            if (miner.Location != Location.Bank) {
+        public void Enter(Miner entity) {
+            if (entity.Location != Location.Bank) {
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: Goin' to the bank. Yes siree", miner.Name);
+                Console.WriteLine("{0}: Goin' to the bank. Yes siree", entity.Name);
 
-                miner.Location = Location.Bank;
+                entity.Location = Location.Bank;
             }
         }
 
-        public override void Execute(Miner miner) {
-            miner.AddToWealth(miner.GoldCarried);
-            miner.GoldCarried = 0;
+        public void Execute(Miner entity) {
+            entity.AddToWealth(entity.GoldCarried);
+            entity.GoldCarried = 0;
             ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Depositing gold. Total saving now: {1}", miner.Name, miner.Wealth);
+            Console.WriteLine("{0}: Depositing gold. Total saving now: {1}", entity.Name, entity.Wealth);
 
-            if (miner.Wealth >= Miner.ComfortLevel) {
+            if (entity.Wealth >= Miner.ComfortLevel) {
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: Woohoo! Rich enough for now. Back home to my li'lle lady", miner.Name);
+                Console.WriteLine("{0}: Woohoo! Rich enough for now. Back home to my li'lle lady", entity.Name);
 
-                miner.ChangeState(GoHomeAndSleepTilRested.Instance);
+                entity.ChangeState(GoHomeAndSleepTilRested.Instance);
             }
             else {
-                miner.ChangeState(EnterMineAndDigForNugget.Instance);
+                entity.ChangeState(EnterMineAndDigForNugget.Instance);
             }
         }
 
-        public override void Exit(Miner miner) {
+        public void Exit(Miner entity) {
             ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Leavin' the bank", miner.Name);
+            Console.WriteLine("{0}: Leavin' the bank", entity.Name);
         }
     }
 }

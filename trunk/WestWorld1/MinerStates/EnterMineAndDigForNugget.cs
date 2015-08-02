@@ -1,39 +1,39 @@
 namespace WestWorld1.MinerStates {
     using System;
 
-    public class EnterMineAndDigForNugget : State {
+    public class EnterMineAndDigForNugget : IState<Miner> {
         private static readonly Lazy<EnterMineAndDigForNugget> Lazy = new Lazy<EnterMineAndDigForNugget>(()=>new EnterMineAndDigForNugget()); 
         private EnterMineAndDigForNugget() { }
 
         public static EnterMineAndDigForNugget Instance {get {return Lazy.Value;}}
 
 
-        public override void Enter(Miner miner) {
-            if (miner.Location != Location.Goldmine) {
+        public void Enter(Miner entity) {
+            if (entity.Location != Location.Goldmine) {
                 ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: Walkin' to the goldmine", miner.Name);
+                Console.WriteLine("{0}: Walkin' to the goldmine", entity.Name);
             
-                miner.Location = Location.Goldmine;
+                entity.Location = Location.Goldmine;
             }
         }
 
-        public override void Execute(Miner miner) {
-            miner.GoldCarried++;
-            miner.IncreaseFatigue();
+        public void Execute(Miner entity) {
+            entity.GoldCarried++;
+            entity.IncreaseFatigue();
 
             ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Pickin' up a nugget", miner.Name);
-            if (miner.PocketsFull) {
-                miner.ChangeState(VisitBankAndDepositGold.Instance);
+            Console.WriteLine("{0}: Pickin' up a nugget", entity.Name);
+            if (entity.PocketsFull) {
+                entity.ChangeState(VisitBankAndDepositGold.Instance);
             }
-            if (miner.Thirsty) {
-                miner.ChangeState(QuenchThirst.Instance);
+            if (entity.Thirsty) {
+                entity.ChangeState(QuenchThirst.Instance);
             }
         }
 
-        public override void Exit(Miner miner) {
+        public void Exit(Miner entity) {
             ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Ah'm leavin' the goldmine with mah pockets full o' sweet gold", miner.Name);
+            Console.WriteLine("{0}: Ah'm leavin' the goldmine with mah pockets full o' sweet gold", entity.Name);
         }
     }
 }

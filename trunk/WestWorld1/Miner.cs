@@ -9,7 +9,7 @@ namespace WestWorld1 {
         private const int ThirstLevel = 5;
         private const int TirednessThreshold = 5;
 
-        private State _currentState;
+        private IState<Miner> _currentState;
 
         private int _goldCarried;
         private int _thirst;
@@ -68,7 +68,7 @@ namespace WestWorld1 {
             }
         }
 
-        public void ChangeState(State newState) {
+        public void ChangeState(IState<Miner> newState) {
             Debug.Assert(_currentState != null);
             Debug.Assert(newState != null);
             _currentState.Exit(this);
