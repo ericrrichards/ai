@@ -1,6 +1,8 @@
 using System.Diagnostics;
 
 namespace WestWorld1 {
+    using System;
+
     using WestWorld1.MinerStates;
 
     public class Miner : BaseGameEntity {
@@ -76,6 +78,5 @@ namespace WestWorld1 {
             _currentState = newState;
             _currentState.Enter(this);
         }
-
     }
 }

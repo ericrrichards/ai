@@ -10,8 +10,7 @@ namespace WestWorld1.MinerStates {
 
         public void Enter(Miner entity) {
             if (entity.Location != Location.Goldmine) {
-                ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-                Console.WriteLine("{0}: Walkin' to the goldmine", entity.Name);
+                entity.LogAction("Walkin' to the goldmine");
             
                 entity.Location = Location.Goldmine;
             }
@@ -21,8 +20,7 @@ namespace WestWorld1.MinerStates {
             entity.GoldCarried++;
             entity.IncreaseFatigue();
 
-            ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Pickin' up a nugget", entity.Name);
+            entity.LogAction("Pickin' up a nugget");
             if (entity.PocketsFull) {
                 entity.ChangeState(VisitBankAndDepositGold.Instance);
             }
@@ -32,8 +30,7 @@ namespace WestWorld1.MinerStates {
         }
 
         public void Exit(Miner entity) {
-            ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            Console.WriteLine("{0}: Ah'm leavin' the goldmine with mah pockets full o' sweet gold", entity.Name);
+            entity.LogAction("Ah'm leavin' the goldmine with mah pockets full o' sweet gold");
         }
     }
 }
