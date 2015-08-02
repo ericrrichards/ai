@@ -41,7 +41,6 @@ namespace WestWorld1 {
 
         public void AddToWealth(int val) {
             Wealth += val;
-            if (Wealth < 0) Wealth = 0;
         }
 
         public bool Thirsty { get { return _thirst >= ThirstLevel; } }
