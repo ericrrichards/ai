@@ -10,7 +10,7 @@ namespace WestWorld1 {
             if (args.Length == 0 || !int.TryParse(args.First(), out numCycles)) {
                 numCycles = 20;
             }
-            var miner = new Miner("Miner Bob") {Color = ConsoleColor.Red};
+            var miner = new Miner("Miner Bob") { Color = ConsoleColor.Red };
             for (var i = 0; i < numCycles; i++) {
                 miner.Update();
                 Thread.Sleep(800);

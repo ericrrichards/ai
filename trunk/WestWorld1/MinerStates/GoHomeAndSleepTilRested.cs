@@ -1,11 +1,11 @@
 ﻿namespace WestWorld1.MinerStates {
     using System;
 
-    public class GoHomeAndSleepTilRested : IState<Miner>{
-        private static readonly Lazy<GoHomeAndSleepTilRested> Lazy = new Lazy<GoHomeAndSleepTilRested>(()=>new GoHomeAndSleepTilRested());
+    public class GoHomeAndSleepTilRested : IState<Miner> {
+        private static readonly Lazy<GoHomeAndSleepTilRested> Lazy = new Lazy<GoHomeAndSleepTilRested>(() => new GoHomeAndSleepTilRested());
         private GoHomeAndSleepTilRested() { }
-        public static GoHomeAndSleepTilRested Instance {get {return Lazy.Value;}}
-        
+        public static GoHomeAndSleepTilRested Instance { get { return Lazy.Value; } }
+
 
 
         public void Enter(Miner entity) {

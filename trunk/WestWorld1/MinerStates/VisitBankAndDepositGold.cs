@@ -2,9 +2,9 @@
     using System;
 
     public class VisitBankAndDepositGold : IState<Miner> {
-        private static readonly Lazy<VisitBankAndDepositGold> Lazy = new Lazy<VisitBankAndDepositGold>(()=>new VisitBankAndDepositGold());
+        private static readonly Lazy<VisitBankAndDepositGold> Lazy = new Lazy<VisitBankAndDepositGold>(() => new VisitBankAndDepositGold());
         private VisitBankAndDepositGold() { }
-        public static VisitBankAndDepositGold Instance { get { return Lazy.Value; }}
+        public static VisitBankAndDepositGold Instance { get { return Lazy.Value; } }
 
 
 
@@ -20,14 +20,13 @@
             entity.AddToWealth(entity.GoldCarried);
             entity.GoldCarried = 0;
             entity.LogAction(string.Format("Depositing gold. Total saving now: {0}", entity.Wealth));
-            
+
 
             if (entity.Wealth >= Miner.ComfortLevel) {
                 entity.LogAction("Woohoo! Rich enough for now. Back home to my li'lle lady");
 
                 entity.ChangeState(GoHomeAndSleepTilRested.Instance);
-            }
-            else {
+            } else {
                 entity.ChangeState(EnterMineAndDigForNugget.Instance);
             }
         }
