@@ -1,6 +1,4 @@
 namespace WestWorld2 {
-    using System.Diagnostics;
-
     using WestWorld2.MinerStates;
 
     public class Miner : BaseGameEntity {

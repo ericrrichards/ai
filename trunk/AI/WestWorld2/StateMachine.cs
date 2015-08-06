@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace WestWorld2 {
+    using System;
 
-namespace WestWorld2 {
     public class StateMachine<TEntity> where TEntity:BaseGameEntity {
         public TEntity Owner { get; set; }
         public IState<TEntity> CurrentState { get; set; }
