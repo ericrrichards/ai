@@ -38,5 +38,14 @@
 
         public bool IsInState(IState<TEntity> state) { return CurrentState.GetType() == state.GetType(); }
 
+        public bool HandleMessage(Telegram telegram) {
+            if (CurrentState != null && CurrentState.OnMessage(Owner, telegram)) {
+                return true;
+            }
+            if (GlobalState != null && GlobalState.OnMessage(Owner, telegram)) {
+                return true;
+            }
+            return false;
+        }
     }
 }

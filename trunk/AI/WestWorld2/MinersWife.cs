@@ -4,6 +4,7 @@
     public class MinersWife :BaseGameEntity {
 
         public Location Location { get; set; }
+        public bool IsCooking { get; set; }
         public StateMachine<MinersWife> StateMachine { get; private set; } 
 
         public MinersWife(string name) : base(name) {
@@ -15,5 +16,7 @@
             StateMachine.Update();
             
         }
+
+        public override bool HandleMessage(Telegram telegram) { return StateMachine.HandleMessage(telegram); }
     }
 }

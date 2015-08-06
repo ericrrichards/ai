@@ -28,5 +28,7 @@
         public void Exit(Miner entity) {
             entity.LogAction("Leaving the saloon, feelin' good");
         }
+
+        public bool OnMessage(Miner owner, Telegram telegram) { return false; }
     }
 }

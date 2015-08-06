@@ -34,5 +34,7 @@ namespace WestWorld2.MinerStates {
         public void Exit(Miner entity) {
             entity.LogAction("Ah'm leavin' the goldmine with mah pockets full o' sweet gold");
         }
+
+        public bool OnMessage(Miner owner, Telegram telegram) { return false; }
     }
 }

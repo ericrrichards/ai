@@ -62,5 +62,7 @@ namespace WestWorld2 {
             _thirst++;
             StateMachine.Update();
         }
+
+        public override bool HandleMessage(Telegram telegram) { return StateMachine.HandleMessage(telegram); }
     }
 }

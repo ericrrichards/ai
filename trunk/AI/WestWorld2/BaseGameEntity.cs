@@ -32,5 +32,12 @@
             ConsoleUtilities.SetTextColor(Color);
             Console.WriteLine("{0}: {1}", Name, message);
         }
+
+        public abstract bool HandleMessage(Telegram telegram);
+
+        public void LogMessage() {
+            ConsoleUtilities.SetTextColor(ConsoleColor.Black, ConsoleColor.Yellow);
+            Console.WriteLine("Message handled by {0} at time: {1}", Name, Clock.GlobalClock.GetCurrentTime());
+        }
     }
 }

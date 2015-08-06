@@ -14,6 +14,7 @@
             if (entity.Location != Location.Shack) {
                 entity.LogAction("Walkin' home");
                 entity.Location = Location.Shack;
+                MessageDispatcher.Instance.DispatchMessage(0, entity, EntityManager.Instance["Elsa"], MessageType.HiHoneyImHome, null);
             }
         }
 
@@ -28,7 +29,17 @@
         }
 
         public void Exit(Miner entity) {
-            entity.LogAction("Leaving the house");
+        }
+
+        public bool OnMessage(Miner owner, Telegram telegram) {
+            switch (telegram.MessageType) {
+                case MessageType.StewReady:
+                    owner.LogMessage();
+                    owner.LogAction("Okay Hun, ahm a comin'!");
+                    owner.StateMachine.ChangeState(EatStew.Instance);
+                    return true;
+            }
+            return false;
         }
     }
 }

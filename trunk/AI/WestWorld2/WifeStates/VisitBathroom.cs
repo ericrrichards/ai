@@ -19,5 +19,7 @@ namespace WestWorld2.WifeStates {
         public void Exit(MinersWife entity) {
             entity.LogAction("Leavin' the jon");
         }
+
+        public bool OnMessage(MinersWife owner, Telegram telegram) { return false; }
     }
 }

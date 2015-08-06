@@ -42,21 +42,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseGameEntity.cs" />
+    <Compile Include="Clock.cs" />
     <Compile Include="ConsoleUtilities.cs" />
+    <Compile Include="EntityManager.cs" />
     <Compile Include="IState.cs" />
     <Compile Include="Location.cs" />
+    <Compile Include="MessageDispatcher.cs" />
+    <Compile Include="MessageType.cs" />
     <Compile Include="Miner.cs" />
+    <Compile Include="MinerStates\EatStew.cs" />
     <Compile Include="MinerStates\EnterMineAndDigForNugget.cs" />
     <Compile Include="MinerStates\GoHomeAndSleepTilRested.cs" />
     <Compile Include="MinerStates\QuenchThirst.cs" />
     <Compile Include="MinerStates\VisitBankAndDepositGold.cs" />
     <Compile Include="MinersWife.cs" />
+    <Compile Include="PriorityQueue.cs" />
     <Compile Include="Program.cs">
       <SubType>
       </SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateMachine.cs" />
+    <Compile Include="Telegram.cs" />
+    <Compile Include="WifeStates\CookStew.cs" />
     <Compile Include="WifeStates\DoHouseWork.cs" />
     <Compile Include="WifeStates\VisitBathroom.cs" />
     <Compile Include="WifeStates\WifesGlobalState.cs" />

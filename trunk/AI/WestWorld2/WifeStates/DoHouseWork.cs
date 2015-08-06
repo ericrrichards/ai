@@ -8,7 +8,9 @@
         public static DoHouseWork Instance { get { return Lazy.Value; } }
 
 
-        public void Enter(MinersWife entity) {  }
+        public void Enter(MinersWife entity) {
+            entity.LogAction("Time to do some more housework!");
+        }
 
         public void Execute(MinersWife entity) {
             switch (_rand.Next(3)) {
@@ -25,5 +27,6 @@
         }
 
         public void Exit(MinersWife entity) {  }
+        public bool OnMessage(MinersWife owner, Telegram telegram) { return false; }
     }
 }
