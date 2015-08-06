@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{22441FFB-6079-475C-A356-B5C826754334}</ProjectGuid>
+    <ProjectGuid>{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WestWorldWithWoman</RootNamespace>
-    <AssemblyName>WestWorldWithWoman</AssemblyName>
+    <RootNamespace>WestWorld2</RootNamespace>
+    <AssemblyName>WestWorld2</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,19 +43,28 @@
   <ItemGroup>
     <Compile Include="BaseGameEntity.cs" />
     <Compile Include="ConsoleUtilities.cs" />
+    <Compile Include="IState.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="Miner.cs" />
-    <Compile Include="MinerStates.cs" />
+    <Compile Include="MinerStates\EnterMineAndDigForNugget.cs" />
+    <Compile Include="MinerStates\GoHomeAndSleepTilRested.cs" />
+    <Compile Include="MinerStates\QuenchThirst.cs" />
+    <Compile Include="MinerStates\VisitBankAndDepositGold.cs" />
     <Compile Include="MinersWife.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Program.cs">
+      <SubType>
+      </SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="State.cs" />
     <Compile Include="StateMachine.cs" />
-    <Compile Include="WifeStates.cs" />
+    <Compile Include="WifeStates\DoHouseWork.cs" />
+    <Compile Include="WifeStates\VisitBathroom.cs" />
+    <Compile Include="WifeStates\WifesGlobalState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

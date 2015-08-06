@@ -1,18 +1,17 @@
-using System;
-using System.Diagnostics;
+namespace WestWorld2 {
+    using System.Diagnostics;
 
-namespace WestWorldWithWoman {
+    using WestWorld2.MinerStates;
+
     public class Miner : BaseGameEntity {
         public const int ComfortLevel = 5;
         private const int MaxNuggets = 3;
         private const int ThirstLevel = 5;
         private const int TirednessThreshold = 5;
 
-        private readonly StateMachine<Miner> _stateMachine;
-        public StateMachine<Miner> StateMachine { get { return _stateMachine; } } 
+        public StateMachine<Miner> StateMachine { get; private set; }
 
         private int _goldCarried;
-        private int _moneyInBank;
         private int _thirst;
         private int _fatigue;
 
@@ -36,37 +35,34 @@ namespace WestWorldWithWoman {
             _fatigue++;
         }
 
-        public int Wealth { get { return _moneyInBank; } set { _moneyInBank = value; } }
+        public int Wealth { get; set; }
 
         public void AddToWealth(int val) {
-            _moneyInBank += val;
-            if (_moneyInBank < 0) _moneyInBank = 0;
+            Wealth += val;
         }
 
         public bool Thirsty { get { return _thirst >= ThirstLevel; } }
 
         public void BuyAndDrinkAWhiskey() {
             _thirst = 0;
-            _moneyInBank -= 2;
+            Wealth -= 2;
         }
 
-        public Miner(string name) : base(name) {
+        public Miner(string name)
+            : base(name) {
             Location = Location.Shack;
             GoldCarried = 0;
-            _moneyInBank = 0;
+            Wealth = 0;
             _thirst = 0;
             _fatigue = 0;
-
-            _stateMachine = new StateMachine<Miner>(this);
-            _stateMachine.CurrentState = GoHomeAndSleepTilRested.Instance;
+            StateMachine = new StateMachine<Miner>(this, GoHomeAndSleepTilRested.Instance);
         }
 
         
 
         public override void Update() {
             _thirst++;
-            ConsoleUtilities.SetTextColor(ConsoleColor.Red);
-            _stateMachine.Update();
+            StateMachine.Update();
         }
     }
 }

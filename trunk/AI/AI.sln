@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter2-StateMachines", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestWorld1", "..\WestWorld1\WestWorld1.csproj", "{E6CF5682-321A-4803-8359-C6251EF23349}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestWorldWithWoman", "..\WestWorldWithWoman\WestWorldWithWoman.csproj", "{22441FFB-6079-475C-A356-B5C826754334}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WestWorld2", "WestWorld2\WestWorld2.csproj", "{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,22 +29,22 @@ Global
 		{E6CF5682-321A-4803-8359-C6251EF23349}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{E6CF5682-321A-4803-8359-C6251EF23349}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{E6CF5682-321A-4803-8359-C6251EF23349}.Release|Win32.ActiveCfg = Release|Any CPU
-		{22441FFB-6079-475C-A356-B5C826754334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22441FFB-6079-475C-A356-B5C826754334}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22441FFB-6079-475C-A356-B5C826754334}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{22441FFB-6079-475C-A356-B5C826754334}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{22441FFB-6079-475C-A356-B5C826754334}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{22441FFB-6079-475C-A356-B5C826754334}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22441FFB-6079-475C-A356-B5C826754334}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22441FFB-6079-475C-A356-B5C826754334}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{22441FFB-6079-475C-A356-B5C826754334}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{22441FFB-6079-475C-A356-B5C826754334}.Release|Win32.ActiveCfg = Release|Any CPU
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E6CF5682-321A-4803-8359-C6251EF23349} = {A15E8BD8-DF34-414F-B451-BF5FD8ECE841}
-		{22441FFB-6079-475C-A356-B5C826754334} = {A15E8BD8-DF34-414F-B451-BF5FD8ECE841}
+		{D376C6D2-D94C-48CA-A6CB-BABD9F1E20FE} = {A15E8BD8-DF34-414F-B451-BF5FD8ECE841}
 	EndGlobalSection
 EndGlobal

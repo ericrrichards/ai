@@ -1,6 +1,6 @@
-﻿using System;
+﻿namespace WestWorld2 {
+    using System;
 
-namespace WestWorldWithWoman {
     public static class ConsoleUtilities {
         public static void SetTextColor(ConsoleColor foreColor, ConsoleColor backColor = ConsoleColor.Black) {
             Console.ForegroundColor = foreColor;
