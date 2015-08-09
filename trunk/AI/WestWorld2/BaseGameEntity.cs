@@ -17,7 +17,7 @@
                 }
             } 
         }
-        public string Name { get; set; }
+        public string Name { get; private set; }
         public ConsoleColor Color { get; set; }
 
         protected BaseGameEntity(string name) {
@@ -27,14 +27,13 @@
         }
 
         public abstract void Update();
+        public abstract bool HandleMessage(Telegram telegram);
+
 
         public void LogAction( string message) {
             ConsoleUtilities.SetTextColor(Color);
             Console.WriteLine("{0}: {1}", Name, message);
         }
-
-        public abstract bool HandleMessage(Telegram telegram);
-
         public void LogMessage() {
             ConsoleUtilities.SetTextColor(ConsoleColor.Black, ConsoleColor.Yellow);
             Console.WriteLine("Message handled by {0} at time: {1}", Name, Clock.GlobalClock.GetCurrentTime());
