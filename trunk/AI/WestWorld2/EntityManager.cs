@@ -1,7 +1,6 @@
 namespace WestWorld2 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
     public class EntityManager {
         private static readonly Lazy<EntityManager> Lazy = new Lazy<EntityManager>(()=>new EntityManager());

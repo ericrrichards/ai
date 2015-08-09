@@ -2,10 +2,10 @@
     using System;
 
     public class StateMachine<TEntity> where TEntity:BaseGameEntity {
-        public TEntity Owner { get; set; }
-        public IState<TEntity> CurrentState { get; set; }
-        public IState<TEntity> PreviousState { get; set; }
-        public IState<TEntity> GlobalState { get; set; }
+        private TEntity Owner { get; set; }
+        private IState<TEntity> CurrentState { get; set; }
+        private IState<TEntity> PreviousState { get; set; }
+        private IState<TEntity> GlobalState { get; set; }
 
         public StateMachine(TEntity owner, IState<TEntity> initialState, IState<TEntity> globalState = null) {
             Owner = owner;

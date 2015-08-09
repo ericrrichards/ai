@@ -33,7 +33,7 @@ namespace WestWorld2 {
             _fatigue++;
         }
 
-        public int Wealth { get; set; }
+        public int Wealth { get; private set; }
 
         public void AddToWealth(int val) {
             Wealth += val;
